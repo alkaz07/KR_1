@@ -35,11 +35,9 @@ public class Square_Moroz_1 {
 
 Вторая задача
 
-
-
 import java.util.Scanner;
 
-public class Square_Moroz_1 {
+public class Perimetr_Moroz_1 {
 	public static void main(String[] args) {
 		
         Scanner scanner = new Scanner(System.in);
@@ -69,12 +67,12 @@ public class Square_Moroz_1 {
         			
         				else
         				if
-        				((long1 == long2 &&  long2 == long3) && (wide1==wide2 && wide2==wide3))
+        				((long1+wide1 == long2+wide2) &&  (long3+wide3==long2+wide2))
         				System.out.println("Все периметры равны");
         				else
         				if
         				
-        				((long1 == long2 && wide1==wide2) || (long1== long3 && wide1==wide3) || (long2==long3 && wide2==wide3))
+        			((long1+wide1 == long2+wide2) || (long3+wide3==long2+wide2) || (long1+wide1 == long3+wide3))
         				
         						System.out.println("Два периметра равны");
         					
