@@ -35,7 +35,7 @@ public class SergeevTaskOneRunner {
         return rectangle.getLength() * rectangle.getWidth();
     }
 
-    private static double sumAreaTwoRectangle(Rectangle recOne, Rectangle recTwo) {
+    public static double sumAreaTwoRectangle(Rectangle recOne, Rectangle recTwo) {
         return rectangleArea(recOne) + rectangleArea(recTwo);
     }
 }
