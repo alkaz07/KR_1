@@ -20,8 +20,8 @@ public class Rectangle_KonevAN {
             perimeter[i] = perimeterCalc(r1);
             System.out.println("Площадь прямоугольника №1: " + square[i]);
             System.out.println("Периметр прямоугольника №1: " + perimeter[i]);
-            totalSquare += totalSquare;
-            totalPerimeter += totalPerimeter;
+            totalSquare += square[i];
+            totalPerimeter += perimeter[i];
         }
 
         averageSquare = totalSquare / nRectangle;
