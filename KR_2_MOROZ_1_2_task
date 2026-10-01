@@ -1,0 +1,87 @@
+Первая задача
+
+import java.util.Scanner;
+
+public class Square_Moroz_1 {
+	public static void main(String[] args) {
+		
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Введите длину первого прямоугольника:");
+        double long1 = scanner.nextDouble();
+        
+        System.out.println("Введите ширину первого прямоугольника:");
+        double wide1 = scanner.nextDouble();
+        
+        System.out.println("Введите длину второго прямоугольника:");
+        double long2 = scanner.nextDouble();
+        
+        System.out.println("Введите ширину второго прямоугольника:");
+        double wide2 = scanner.nextDouble();
+        
+        
+        if (long1<=0 || wide1<=0 ||  long2 <= 0 || wide2<=0)
+        
+        System.out.println("Некорректные данные");		
+        			
+        				else
+        				
+        				System.out.println("Сумма площадей прямоугольников равна:  " + ((long1*wide1) + (long2*wide2)));
+        				
+        					
+        							}
+        
+}
+
+Вторая задача
+
+
+
+import java.util.Scanner;
+
+public class Square_Moroz_1 {
+	public static void main(String[] args) {
+		
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Введите длину первого прямоугольника:");
+        double long1 = scanner.nextDouble();
+        
+        System.out.println("Введите ширину первого прямоугольника:");
+        double wide1 = scanner.nextDouble();
+        
+        System.out.println("Введите длину второго прямоугольника:");
+        double long2 = scanner.nextDouble();
+        
+        System.out.println("Введите ширину второго прямоугольника:");
+        double wide2 = scanner.nextDouble();
+        
+                System.out.println("Введите длину третьего прямоугольника:");
+        double long3 = scanner.nextDouble();
+        
+        System.out.println("Введите ширину третьего прямоугольника:");
+        double wide3 = scanner.nextDouble();
+        
+        
+        if (long1<=0 || wide1<=0 ||  long2 <= 0 || wide2<=0 || long3 <= 0 || wide3<=0)
+        
+        System.out.println("Некорректные данные");		
+        			
+        				else
+        				if
+        				((long1 == long2 &&  long2 == long3) && (wide1==wide2 && wide2==wide3))
+        				System.out.println("Все периметры равны");
+        				else
+        				if
+        				
+        				((long1 == long2 && wide1==wide2) || (long1== long3 && wide1==wide3) || (long2==long3 && wide2==wide3))
+        				
+        						System.out.println("Два периметра равны");
+        					
+        					else
+        					
+        						System.out.println("Все периметры разные");
+        					
+        							}
+        
+}
