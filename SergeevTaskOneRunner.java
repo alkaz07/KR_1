@@ -14,7 +14,7 @@ public class SergeevTaskOneRunner {
 
         double areaRecOne = rectangleArea(recOne);
         double areaRecTwo = rectangleArea(recTwo);
-        System.out.println("Сумма площадей ДВУХ прямоугольников = " + sumAreaTwoRectangle(recOne, recTwo ));
+        System.out.println("Сумма площадей ДВУХ прямоугольников = " + sumAreaTwoRectangle(areaRecOne, areaRecTwo ));
     }
 
     public static Rectangle addRectangle() {
@@ -32,11 +32,13 @@ public class SergeevTaskOneRunner {
     }
 
     public static double rectangleArea(Rectangle rectangle) {
-        return rectangle.getLength() * rectangle.getWidth();
+        double area = rectangle.getLength() * rectangle.getWidth();
+        System.out.println("Площадь прямоугольника = " + area);
+        return area;
     }
 
-    public static double sumAreaTwoRectangle(Rectangle recOne, Rectangle recTwo) {
-        return rectangleArea(recOne) + rectangleArea(recTwo);
+    public static double sumAreaTwoRectangle(double areaRecOne, double areaRecTwo) {
+        return areaRecOne + areaRecOne;
     }
 }
 
