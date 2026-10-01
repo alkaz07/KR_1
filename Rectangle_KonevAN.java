@@ -18,8 +18,8 @@ public class Rectangle_KonevAN {
             Rectangle r1 = inputRectangle();
             square[i] = squareCalc(r1);
             perimeter[i] = perimeterCalc(r1);
-            System.out.println("Площадь прямоугольника №1: " + square[i]);
-            System.out.println("Периметр прямоугольника №1: " + perimeter[i]);
+            System.out.println("Площадь прямоугольника  " + square[i]);
+            System.out.println("Периметр прямоугольника: " + perimeter[i]);
             totalSquare += square[i];
             totalPerimeter += perimeter[i];
         }
@@ -30,18 +30,28 @@ public class Rectangle_KonevAN {
         System.out.println("Средняя площадь: " + averageSquare);
 
         for (int i = 0; i < nRectangle; i++) {
-            eqSquare += eqSquare;
-            eqPerimeter += eqPerimeter;
-        }
+            if (averageSquare == square[i]) {
+                eqSquare += 1;
+            }
 
-        if (eqPerimeter == 1.0*nRectangle) {
-            System.out.println("Выполняется равенство периметров всех прямоугольников");
+            if (averagePerimeter == perimeter[i]) {
+                eqPerimeter += 1;
+            }
         }
-        else{
-            System.out.println("Не выполняется равенство периметров всех прямоугольников");
+        //System.out.println(eqPerimeter);
+        //System.out.println(eqSquare);
+            if (eqPerimeter - 1.0 * nRectangle == 0.000) {
+                System.out.println("Периметры всех прямоугольников равны");
+            } else {
+                System.out.println("Периметры всех прямоугольников не равны");
+            }
+
+            if (eqSquare - 1.0 * nRectangle == 0.000) {
+            System.out.println("Площади всех прямоугольников равны");
+        } else {
+            System.out.println("Площади всех прямоугольников не равны");
         }
     }
-
 
 
     static Rectangle inputRectangle(){
