@@ -1,0 +1,44 @@
+public class PerovaOksana {
+    public static void main(String[] args) {
+        int kolvo = Integer.parseInt(IO.readln("Введте количество прямоугольников: "));//ввод данных
+
+        int s[] = new int[kolvo];
+        int p[] = new int[kolvo];
+        int dlina[] = new int[kolvo];
+        for (int i = 0; i < kolvo; i++) {
+            dlina[i] = Integer.parseInt(IO.readln("Введите длину прямоугольника " + (i + 1) + ": "));
+        }
+        int shirina[] = new int[kolvo];
+        for (int i = 0; i < kolvo; i++) {
+            shirina[i] = Integer.parseInt(IO.readln("Введите ширину прямоугольника " + (i + 1) + ": "));//ввод данных
+        }
+        for (int i = 0; i < kolvo; i++) {
+            s[i] = dlina[i] * shirina[i];
+        }
+
+
+        int sum = 0;
+
+        for (int i = 0; i < s.length; i++)
+            sum += s[i];
+        System.out.println("Сумма площадей прямоугольников: " + sum);
+        double sreds = 0;
+        sreds = sum / kolvo;
+        System.out.println("Средняя площадь прямоугольников: " + sreds);
+
+
+        for (int i = 0; i < kolvo; i++) {
+            p[i] = 2 * (dlina[i] + shirina[i]);
+            for (int j = i + 1; j < kolvo; j++) {
+                if (p[i] == p[j]) {
+                    System.out.println("Все периметры равны");
+                } else if (p[i] != p[j]) {
+                    System.out.println("Все периметры разные");
+                } else {
+                    System.out.println("Какие-то периметры равны"); // ЭТО НЕ РАБОТАЕТ
+                }
+            }
+
+        }
+    }
+}
