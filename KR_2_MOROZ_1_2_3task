@@ -120,6 +120,7 @@ public class Square2_Moroz_1 {
                 
             } while (counter < 5);
             
-            System.out.println("Сумма площадей прямоугольников: " + squareSum);
+            System.out.println("Средняя площадь равна : " + (squareSum/5));
 	}
+}
 }
