@@ -85,3 +85,41 @@ public class Square_Moroz_1 {
         							}
         
 }
+
+
+Третья задача
+
+import java.util.Scanner;
+
+public class Square2_Moroz_1 {
+	public static void main(String[] args) {
+		
+        Scanner scanner = new Scanner(System.in);
+  
+        
+        int counter = 0;
+        double squareSum=0;
+		
+		
+		
+		 do {
+               
+                
+                  System.out.println("Введите длину прямоугольника:");
+        double long1 = scanner.nextDouble();
+        
+        System.out.println("Введите ширину прямоугольника:");
+        double wide1 = scanner.nextDouble();
+        
+        double square = long1*wide1;
+        
+      
+        squareSum += square;
+                
+                counter++;
+                
+            } while (counter < 5);
+            
+            System.out.println("Сумма площадей прямоугольников: " + squareSum);
+	}
+}
