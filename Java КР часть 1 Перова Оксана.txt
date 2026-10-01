@@ -22,7 +22,7 @@ System.out.println("i="+i+" x="+x); // Ответ: i = 8,  x = 512 (2 в сте�
 int i, N=7, x=2;
 for(i=4; i<N; i++);
 	x*=2;
-System.out.println("i="+i+" x="+x); // не знаю
+System.out.println("i="+i+" x="+x); //i=7, x=4
 
 4) Какую строку выведет следующая программа // выведет " 5"
 public class Main {
