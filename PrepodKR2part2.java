@@ -15,27 +15,58 @@ public class PrepodKR2part2 {
         task1();
         task2();
         task3();
-    }    
+    }
 
     private static void task1() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Ввведите длину и ширину 1 прямоугольника");
-        int width1 = scan.nextInt();
-        int height1 = scan.nextInt();
-
-        System.out.println("Введите длину и ширину 2 прямоугольника");
-        int width2 = scan.nextInt();
-        int height2 = scan.nextInt();
-        
-        int area1 = width1*height1;
-        int area2 = width2*height2;
-        int sumArea = area1+area2;
+        Rectangle rect1 = inputRectangle(1);
+        Rectangle rect2 = inputRectangle(2);
+        int sumArea = rect1.area() + rect2.area();
         System.out.println("sumArea = " + sumArea);
-    }
-    
-    private static void task3() {
     }
 
     private static void task2() {
+        Rectangle r1 = inputRectangle(1);
+        Rectangle r2 = inputRectangle(2);
+        Rectangle r3 = inputRectangle(3);
+
+        if (r1.perimeter() == r2.perimeter() && r1.perimeter() == r3.perimeter()) {
+            System.out.println("все периметры равны");
+        }
+        else if(r1.perimeter() == r2.perimeter() || r1.perimeter() == r3.perimeter() || r2.perimeter()==r3.perimeter()){
+            System.out.println("два периметра равны");
+        }
+        else
+            System.out.println("периметры разные");
     }
+
+    private static void task3() {
+        Rectangle[] rectangles = new Rectangle[5];
+        for (int i = 0; i < rectangles.length; i++) {
+            rectangles[i] = inputRectangle(i);
+        }
+        
+        double summArea = 0;
+        for (int i = 0; i < rectangles.length; i++) {
+            summArea += rectangles[i].area();
+        }
+        double avgArea = summArea / rectangles.length;
+
+        System.out.println("avgArea = " + avgArea);
+    }
+
+    public static Rectangle inputRectangle(int n) {
+        Scanner scan = new Scanner(System.in);
+        Rectangle rect1 = new Rectangle();
+        System.out.println("Введите длину и ширину " + n + " прямоугольника");
+        rect1.width = scan.nextInt();
+        rect1.height = scan.nextInt();
+        return rect1;
+    }
+
+}
+
+class Rectangle {
+    int width, height;
+    int area() {        return width * height;    }
+    int perimeter() {  return 2* (width+height);  }
 }
