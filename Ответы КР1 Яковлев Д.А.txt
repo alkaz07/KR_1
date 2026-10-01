@@ -5,5 +5,5 @@
         	int z = 25-y;
         	System.out.println(x+' '+y+' '+z);
 2) i=8, x=512
-3) 4 
+3) i=7 x=4 
 4) 5
