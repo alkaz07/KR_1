@@ -1,0 +1,54 @@
+ 2. Запросить у пользователя параметры (длину и ширину) ТРЕХ Прямоугольников,сравнить их периметры.
+Если все периметры равны, вывести "все периметры равны"
+Если любые 2 периметра равны, вывести "два периметра равны"
+Если все периметры разные вывести "периметры разные"
+______________________________________________
+
+import java.util.HashSet; 
+import java.util.Scanner; 
+import java.util.Set; 
+
+public class RectanglePerimeters { 
+
+    public static void main(String[] args) { 
+        Scanner scanner = new Scanner(System.in); 
+        double[] perimeters = new double[3]; 
+
+        System.out.println("Введите параметры для трех прямоугольников:"); 
+
+        // 1. Сбор данных и расчет периметров 
+        for (int i = 0; i < 3; i++) { 
+            System.out.print("Введите длину " + (i + 1) + "-го прямоугольника: "); 
+            double length = scanner.nextDouble(); 
+
+            System.out.print("Введите ширину " + (i + 1) + "-го прямоугольника: "); 
+            double width = scanner.nextDouble();
+
+            // Формула периметра: P = 2 * (a + b) 
+            perimeters[i] = 2 * (length + width); 
+            System.out.println("Периметр " + (i + 1) + "-го прямоугольника: " + perimeters[i]); 
+        } 
+
+        // 2. Поиск уникальных периметров с помощью HashSet 
+        Set<Double> uniquePerimeters = new HashSet<>(); 
+        for (double p : perimeters) { 
+            uniquePerimeters.add(p); 
+        } 
+
+        // 3. Вывод результата в зависимости от количества уникальных значений 
+        System.out.println("\nРезультат сравнения:"); 
+        switch (uniquePerimeters.size()) { 
+            case 1: 
+                System.out.println("все периметры равны"); 
+                break; 
+            case 2: 
+                System.out.println("два периметра равны"); 
+                break; 
+            case 3: 
+                System.out.println("периметры разные"); 
+                break; 
+        } 
+
+        scanner.close(); 
+    } 
+}
