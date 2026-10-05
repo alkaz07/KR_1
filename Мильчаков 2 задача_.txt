@@ -16,7 +16,7 @@ public class RectanglePerimeters {
 
         System.out.println("Введите параметры для трех прямоугольников:"); 
 
-        // 1. Сбор данных и расчет периметров 
+       
         for (int i = 0; i < 3; i++) { 
             System.out.print("Введите длину " + (i + 1) + "-го прямоугольника: "); 
             double length = scanner.nextDouble(); 
@@ -29,13 +29,13 @@ public class RectanglePerimeters {
             System.out.println("Периметр " + (i + 1) + "-го прямоугольника: " + perimeters[i]); 
         } 
 
-        // 2. Поиск уникальных периметров с помощью HashSet 
+       
         Set<Double> uniquePerimeters = new HashSet<>(); 
         for (double p : perimeters) { 
             uniquePerimeters.add(p); 
         } 
 
-        // 3. Вывод результата в зависимости от количества уникальных значений 
+        
         System.out.println("\nРезультат сравнения:"); 
         switch (uniquePerimeters.size()) { 
             case 1: 
