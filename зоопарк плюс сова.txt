@@ -1,0 +1,43 @@
+public class ZooMain {
+
+    static class Crocodile {
+        // Поля для хранения данных
+        private String name;
+        private String species;
+        private String color;
+
+        // Конструктор с инициализацией полей
+        public Crocodile(String name, String species, String color) {
+            this.name = name;
+            this.species = species;
+            this.color = color;
+        }
+
+        public void klats() {
+            System.out.println("Крокодил клацает зубами");
+        }
+    }
+
+    static class Hog {
+        public void growl() {
+            System.out.println("Кабан хрюкает");
+        }
+    }
+
+    static class Owl {
+        public void hoots() {
+            System.out.println("Сова уухает");
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Добро пожаловать в наш Зоопарк");
+
+        Crocodile crok = new Crocodile("Гена", "Нильский", "Зеленый");
+        crok.klats();
+        Hog h = new Hog();
+        h.growl();
+        Owl o = new Owl();
+        o.hoots();
+    }
+}
