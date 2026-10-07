@@ -1,12 +1,10 @@
 public class ZooMain {
 
     static class Crocodile {
-        // Поля для хранения данных
         private String name;
         private String species;
         private String color;
 
-        // Конструктор с инициализацией полей
         public Crocodile(String name, String species, String color) {
             this.name = name;
             this.species = species;
