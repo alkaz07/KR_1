@@ -23,8 +23,8 @@ public class KR_1_part2_Smirnov {
     }
 
     void task1() {
-        GeometricObject geo1 = this.scanVaolumeAndMass();
-        GeometricObject geo2 = this.scanVaolumeAndMass();
+        GeometricObject geo1 = this.scanVolumeAndMass();
+        GeometricObject geo2 = this.scanVolumeAndMass();
         double plotnost1 = geo1.getPlotnost();
         double plotnost2 = geo2.getPlotnost();
         double maxPlotnost = Math.max(plotnost1, plotnost2);
@@ -32,9 +32,9 @@ public class KR_1_part2_Smirnov {
     }
 
     void task2() {
-        GeometricObject geo1 = this.scanVaolumeAndMass();
-        GeometricObject geo2 = this.scanVaolumeAndMass();
-        GeometricObject geo3 = this.scanVaolumeAndMass();
+        GeometricObject geo1 = this.scanVolumeAndMass();
+        GeometricObject geo2 = this.scanVolumeAndMass();
+        GeometricObject geo3 = this.scanVolumeAndMass();
 
         double plotnost1 = geo1.getPlotnost();
         double plotnost2 = geo2.getPlotnost();
@@ -50,11 +50,11 @@ public class KR_1_part2_Smirnov {
     }
 
     void task3() {
-        GeometricObject geo1 = this.scanVaolumeAndMass();
-        GeometricObject geo2 = this.scanVaolumeAndMass();
-        GeometricObject geo3 = this.scanVaolumeAndMass();
-        GeometricObject geo4 = this.scanVaolumeAndMass();
-        GeometricObject geo5 = this.scanVaolumeAndMass();
+        GeometricObject geo1 = this.scanVolumeAndMass();
+        GeometricObject geo2 = this.scanVolumeAndMass();
+        GeometricObject geo3 = this.scanVolumeAndMass();
+        GeometricObject geo4 = this.scanVolumeAndMass();
+        GeometricObject geo5 = this.scanVolumeAndMass();
 
         GeometricObject geoTotal = new GeometricObject(
                 geo1.mass + geo2.mass + geo3.mass + geo4.mass + geo5.mass,
@@ -64,10 +64,10 @@ public class KR_1_part2_Smirnov {
         System.out.println("avg plotnost " + geoTotal.getPlotnost());
     }
 
-    GeometricObject scanVaolumeAndMass() {
+    GeometricObject scanVolumeAndMass() {
         Scanner scanner = new Scanner(System.in);
-        double mass = scanner.nextInt();
-        double volume = scanner.nextInt();
+        double mass = scanner.nextDouble();
+        double volume = scanner.nextDouble();
         return new GeometricObject(mass, volume);
     }
 }
