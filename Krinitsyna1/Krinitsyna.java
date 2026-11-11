@@ -41,12 +41,17 @@ public class Krinitsyna1 {
     }
 
     static void task3() {
-        double sum = 0;
+        double sumM = 0;
+        double sumV = 0;
+
         for (int i = 1; i <= 5; i++) {
-            sum += readItem().getDensity();
+            Item item = readItem();
+            sumM += item.mass;
+            sumV += item.volume;
         }
-        System.out.println("Средняя плотность: " + sum / 5);
+        System.out.println("Средняя плотность: " + (sumM / sumV));
     }
+
 
     private static Item readItem() {
         Scanner scanner = new Scanner(System.in);
