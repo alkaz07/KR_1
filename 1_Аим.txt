@@ -1,8 +1,10 @@
-1)
-		double x=0, y=10; //нужно дать значение для x
+1) double x=0, y=10; //нужно дать значение для x
         	System.out.println(x+y);
         	System.out.println("ы"+x+y);
-        	double z = 25-y; //тип int не подходит 
+   double z = 25-y; //тип int не подходит 
         	System.out.println(x+' '+y+' '+z);
 
-2)
+
+2) i=8 x=512
+3) i= 7 x=4
+4) 5
