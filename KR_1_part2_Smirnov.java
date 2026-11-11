@@ -1,20 +1,31 @@
 import java.util.Scanner;
 
-class GeometricObject {
+class Body {
     double volume;
     double mass;
 
-    public  GeometricObject(double mass, double volume) {
+    public Body(double mass, double volume) {
         this.mass = mass;
         this.volume = volume;
     }
+    
+    public static Body scanBody() {
+        Scanner scanner = new Scanner(System.in);
+        double mass = scanner.nextDouble();
+        double volume = scanner.nextDouble();
+        return new Body(mass, volume);
+    }
 
-    double getPlotnost() {
+    double getDensity() {
         return  this.mass / this.volume;
+    }
+
+    boolean isEqualDensity(Body other) {
+        return Math.abs(this.getDensity() - other.getDensity()) <= 1E-9;
     }
 }
 
-public class KR_1_part2_Smirnov {
+public class KR_1_2_Smirnov {
 
     void main() {
         this.task1();
@@ -23,26 +34,21 @@ public class KR_1_part2_Smirnov {
     }
 
     void task1() {
-        GeometricObject geo1 = this.scanVolumeAndMass();
-        GeometricObject geo2 = this.scanVolumeAndMass();
-        double plotnost1 = geo1.getPlotnost();
-        double plotnost2 = geo2.getPlotnost();
-        double maxPlotnost = Math.max(plotnost1, plotnost2);
-        System.out.println("max plotnost " + maxPlotnost);
+        Body geo1 = Body.scanBody();
+        Body geo2 = Body.scanBody();
+
+        double maxDensity = Math.max(geo1.getDensity(), geo2.getDensity());
+        System.out.println("max plotnost " + maxDensity);
     }
 
     void task2() {
-        GeometricObject geo1 = this.scanVolumeAndMass();
-        GeometricObject geo2 = this.scanVolumeAndMass();
-        GeometricObject geo3 = this.scanVolumeAndMass();
+        Body geo1 = Body.scanBody();
+        Body geo2 = Body.scanBody();
+        Body geo3 = Body.scanBody();
 
-        double plotnost1 = geo1.getPlotnost();
-        double plotnost2 = geo2.getPlotnost();
-        double plotnost3 = geo3.getPlotnost();
-
-        if (plotnost1 == plotnost2 && plotnost1 == plotnost3) {
+        if (geo1.isEqualDensity(geo2) && geo1.isEqualDensity(geo3)) {
             System.out.println("все плотности равны");
-        } else if (plotnost1 == plotnost2 || plotnost1 == plotnost3 || plotnost2 == plotnost3) {
+        } else if (geo1.isEqualDensity(geo2) || geo1.isEqualDensity(geo3) || geo2.isEqualDensity(geo3)) {
             System.out.println("двe плотности равны");
         } else {
             System.out.println("плотности разные");
@@ -50,24 +56,17 @@ public class KR_1_part2_Smirnov {
     }
 
     void task3() {
-        GeometricObject geo1 = this.scanVolumeAndMass();
-        GeometricObject geo2 = this.scanVolumeAndMass();
-        GeometricObject geo3 = this.scanVolumeAndMass();
-        GeometricObject geo4 = this.scanVolumeAndMass();
-        GeometricObject geo5 = this.scanVolumeAndMass();
+        Body geo1 = Body.scanBody();
+        Body geo2 = Body.scanBody();
+        Body geo3 = Body.scanBody();
+        Body geo4 = Body.scanBody();
+        Body geo5 = Body.scanBody();
 
-        GeometricObject geoTotal = new GeometricObject(
+        Body geoTotal = new Body(
                 geo1.mass + geo2.mass + geo3.mass + geo4.mass + geo5.mass,
                 geo1.volume + geo2.volume + geo3.volume + geo4.volume + geo5.volume
         );
 
-        System.out.println("avg plotnost " + geoTotal.getPlotnost());
-    }
-
-    GeometricObject scanVolumeAndMass() {
-        Scanner scanner = new Scanner(System.in);
-        double mass = scanner.nextDouble();
-        double volume = scanner.nextDouble();
-        return new GeometricObject(mass, volume);
+        System.out.println("avg plotnost " + geoTotal.getDensity());
     }
 }
