@@ -29,8 +29,6 @@ public class Task1 {
         }
     }
 
-
-
 2.
 
 import java.util.Scanner;
