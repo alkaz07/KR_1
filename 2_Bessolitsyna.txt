@@ -1,0 +1,31 @@
+import java.util.Scanner;
+static void main(String [] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Напиши массу первого предмета (в кг): ");
+        double m1 = scanner.nextInt();
+
+        System.out.print("Напиши объем первого предмета (в куб.метрах): ");
+        double v1 = scanner.nextInt();
+        System.out.print("Напиши массу второго предмета (в кг): ");
+        double m2 = scanner.nextInt();
+
+        System.out.print("Напиши объем второго предмета (в куб.метрах): ");
+        double v2 = scanner.nextInt();
+        double p1 = (double) m1 / v1;
+        double p2 = (double) m2/v2;
+        System.out.println("Плотность = отношению массы и объема (кг/куб.метр). ");
+        System.out.println("Плотность первого предмета: "+p1);
+
+        System.out.println("Плотность второго предмета: "+p2);
+
+        //Определяем какой предмет плотнее. Вывести максимальную плотность этих предметов.
+        if (p1 > p2) {
+            System.out.println("Первый предмет плотнее");
+        } else if (p2 > p1) {
+            System.out.println("Второй предмет плотнее.");
+        } else {
+            System.out.println("Плотности предметов одинаковые.");
+        }
+    }
+
+}
