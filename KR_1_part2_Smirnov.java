@@ -1,14 +1,15 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 class Body {
-    double volume;
-    double mass;
+    private double volume;
+    private double mass;
 
     public Body(double mass, double volume) {
         this.mass = mass;
         this.volume = volume;
     }
-    
+
     public static Body scanBody() {
         Scanner scanner = new Scanner(System.in);
         double mass = scanner.nextDouble();
@@ -22,6 +23,12 @@ class Body {
 
     boolean isEqualDensity(Body other) {
         return Math.abs(this.getDensity() - other.getDensity()) <= 1E-9;
+    }
+
+    public static  double getAverageDensity(Body[] bodies) {
+        double volumes = Arrays.stream(bodies).map(body-> body.volume).reduce(0.0, Double::sum);
+        double totalMass = Arrays.stream(bodies).map(body -> body.mass).reduce(0.0, Double::sum);
+        return totalMass / volumes;
     }
 }
 
@@ -56,17 +63,11 @@ public class KR_1_2_Smirnov {
     }
 
     void task3() {
-        Body geo1 = Body.scanBody();
-        Body geo2 = Body.scanBody();
-        Body geo3 = Body.scanBody();
-        Body geo4 = Body.scanBody();
-        Body geo5 = Body.scanBody();
+        Body[] bodies = new Body[5];
+        for (int i = 0; i < 5; i++) {
+            bodies[i] = Body.scanBody();
+        }
 
-        Body geoTotal = new Body(
-                geo1.mass + geo2.mass + geo3.mass + geo4.mass + geo5.mass,
-                geo1.volume + geo2.volume + geo3.volume + geo4.volume + geo5.volume
-        );
-
-        System.out.println("avg plotnost " + geoTotal.getDensity());
+        System.out.println("avg density " + Body.getAverageDensity(bodies));
     }
 }
