@@ -1,0 +1,11 @@
+    public static void main(String[] args) {
+
+
+               double x = 10;
+               double y = 10;
+        System.out.println(x + y);
+        System.out.println("ы" + (x + y));
+        int z = 25 -(int) y;
+        System.out.println(x + ' ' + y);
+    }
+}
