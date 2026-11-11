@@ -21,11 +21,12 @@ public class BullSergey {
         // 3-й пункт
         inputData(masInput,5 ); // ввод параметов 5х предметов
         densityData(masInput,5 ); // вычисляем плотность 5х предметов
-        double sumDensity = 0;
+        double sumMass = 0, sumVolume = 0;
         for (int i = 0; i < 5; i++) {
-            sumDensity += masInput[i][2];
+            sumMass += masInput[i][0];
+            sumVolume += masInput[i][1];
         }
-        IO.println("Средняя плотность: " + (sumDensity / 5));
+        IO.println("Средняя плотность: " + (sumMass / sumVolume));
 
     }
 
