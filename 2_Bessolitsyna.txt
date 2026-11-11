@@ -29,3 +29,52 @@ static void main(String [] args) {
     }
 
 }
+
+2)
+
+    static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Напиши параметры трех предметов. ");
+        System.out.print("Напиши массу первого предмета (в кг): ");
+        double m1 = scanner.nextDouble();
+
+        System.out.print("Напиши объем первого предмета (в куб.метрах): ");
+        double v1 = scanner.nextDouble();
+        System.out.print("Напиши массу второго предмета (в кг): ");
+        double m2 = scanner.nextDouble();
+
+        System.out.print("Напиши объем второго предмета (в куб.метрах): ");
+        double v2 = scanner.nextDouble();
+        System.out.print("Напиши массу третьего предмета (в кг): ");
+        double m3 = scanner.nextDouble();
+
+        System.out.print("Напиши объем третьего предмета (в куб.метрах): ");
+        double v3 = scanner.nextDouble();
+
+        double p1 = m1 / v1;
+        double p2 = m2 / v2;
+        double p3 = m3 / v3;
+
+
+        System.out.println("Плотность = отношению массы и объема (кг/куб.метр). ");
+        System.out.println("Плотность первого предмета: " + p1);
+
+        System.out.println("Плотность второго предмета: " + p2);
+        System.out.println("Плотность третьего предмета: " + p3);
+        double maxP = Math.max(p1, Math.max(p2, p3));
+
+
+        //Определяем какой предмет плотнее. Вывести максимальную плотность этих предметов.
+        if (p1 == p2 && p2 == p3) {
+            System.out.println("Все плотности равны.");
+        }
+            else if (p1 != p2 && p2 != p3 && p3!=p1) {
+            System.out.println("Плотности предметов разные.");
+        }
+            else {
+            System.out.println("Два предмета имеют одинаковую плотность, а третий отличается.");
+
+        }
+
+    }
+}
