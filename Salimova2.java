@@ -9,19 +9,19 @@ public class Salimova2 {
 
     private static void firstTask() {
         for (int i = 1; i < 3; i++) {
-            double m = Integer.parseInt(IO.readln("Введите массу " + i + "-го предмета: "));
-            double v = Integer.parseInt(IO.readln("Введите объем " + i + "-го предмета: "));
+            double m = Double.parseDouble(IO.readln("Введите массу " + i + "-го предмета: "));
+            double v = Double.parseDouble(IO.readln("Введите объем " + i + "-го предмета: "));
             IO.println("Плотность " + i + "-го предмета: " + (m / v));
         }
     }
 
     private static void secondTask() {
-        double m1 = Integer.parseInt(IO.readln("Введите массу первого предмета: "));
-        double v1 = Integer.parseInt(IO.readln("Введите объем первого предмета: "));
-        double m2 = Integer.parseInt(IO.readln("Введите массу второго предмета: "));
-        double v2 = Integer.parseInt(IO.readln("Введите объем второго предмета: "));
-        double m3 = Integer.parseInt(IO.readln("Введите массу третьего предмета: "));
-        double v3 = Integer.parseInt(IO.readln("Введите объем третьего предмета: "));
+        double m1 = Double.parseDouble(IO.readln("Введите массу первого предмета: "));
+        double v1 = Double.parseDouble(IO.readln("Введите объем первого предмета: "));
+        double m2 = Double.parseDouble(IO.readln("Введите массу второго предмета: "));
+        double v2 = Double.parseDouble(IO.readln("Введите объем второго предмета: "));
+        double m3 = Double.parseDouble(IO.readln("Введите массу третьего предмета: "));
+        double v3 = Double.parseDouble(IO.readln("Введите объем третьего предмета: "));
 
         if (m1 / v1 == m2 / v2 && m1 / v1 == m3 / v3) {
             IO.println("все плотности равны");
@@ -37,8 +37,8 @@ public class Salimova2 {
         double[] density = new double[5];
         double sum =0;
         for (int i = 0; i < 5; i++) {
-            double m = Integer.parseInt(IO.readln("Введите массу " + (i+1) + "-го предмета: "));
-            double v = Integer.parseInt(IO.readln("Введите объем " + (i+1) + "-го предмета: "));
+            double m = Double.parseDouble(IO.readln("Введите массу " + (i+1) + "-го предмета: "));
+            double v = Double.parseDouble(IO.readln("Введите объем " + (i+1) + "-го предмета: "));
             density[i] = m/v;
             sum += density[i];
         }
